@@ -34,7 +34,7 @@ while true; do
 
 	#shell01 from piscine for IP and MAC address
 	echo "Network:"
-	ip a s | head -n 10 | grep inet | awk '{print $2}'
+	hostname -I
 	ip a s | grep ether | awk '{print "("$2")"}'
 
 	#sudo command "sudo grep sudo /var/logs/secure"
