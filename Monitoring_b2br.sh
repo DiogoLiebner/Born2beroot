@@ -17,7 +17,7 @@ while true; do
 
 	# Display memory usage
 	echo -e "Memory Usage:"
-	free -m | grep Mem | awk '{print $3"/"$2"Mb" "("$3/$2 * 100 "%)"}'
+	free -m | grep Mem | awk '{print $3"/"$2"Mb" "("$3/$2 * 100 "%")}'
 
 	# Display disk space usage
 	echo -e "Disk Space Usage:"
@@ -29,9 +29,13 @@ while true; do
 	
 	# Display whether LVM is active or not
 	echo -e "LVM Use: "
+	lvs
 	#lvmdisplay #or lvs
 
 	#shell01 from piscine for IP and MAC address
+	echo "Network:"
+	ip a s | head -n 10 | grep inet | awk '{print $2}'
+	ip a s | grep ether | awk '{print "("$2")"}'
 
 	#sudo command "sudo grep sudo /var/logs/secure"
 
