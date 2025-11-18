@@ -15,7 +15,7 @@
 
 	# Display CPU loadRemoved infinite loop and sleep command for monitoring script.
 	echo "CPU load:"
-	mpstat | tail -n 1 | awk '{print $4+$6"%"}'
+	mpstat | tail -n 1 | awk '{print $4+$6+$7"%"}'
 
 	# Display memory usage
 	echo -e "Memory Usage:"
@@ -46,4 +46,6 @@
 	echo "User log:"
 	users | wc -w
 
-	#sudo command "sudo grep sudo /var/logs/secure
+	echo "Sudo Count:"
+	grep COMMAND /var/log/sudo/sudo.log | wc -l
+		
