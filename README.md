@@ -17,7 +17,6 @@ This implementation uses **Debian**, with the mandatory LVM partitioning scheme.
 - [User and Group Management](#user-and-group-management)
 - [Monitoring Script](#monitoring-script)
 - [Usage](#usage)
-- [Defense Tips](#defense-tips)
 
 ## Overview
 
@@ -190,15 +189,4 @@ The cron job is configured in `/etc/cron.d/monitoring` or via `crontab -e` for r
    ```bash
    sudo /usr/local/bin/monitoring.sh
    ```
-
-## Defense Tips
-
-- Be ready to explain **every** configuration choice: partitioning, sudo policy, SSH hardening, firewall rules.
-- Know the difference between UFW and iptables, and how UFW manages rules under the hood.
-- Be able to justify LVM and disk encryption choices, and demonstrate resizing a logical volume if asked.
-- Have the password policy files and sudo log ready to show live during the defense.
-- Understand exactly what each field of `monitoring.sh`'s output represents and how it's gathered (`/proc`, `lscpu`, `free`, `vgdisplay`, etc.).
-
----
-
 *42 School — Born2beRoot project*
